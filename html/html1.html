@@ -8,37 +8,37 @@
   </head>
 
   <body>
-    <form action="JAVA_task5pt2.html" method="get">
+    <form id="form" action="JAVA_task5pt2.html" method="get">
 
-      <div class="name">
+      <div class="name" id="container">
 
-      <label class="namelabel">Name:</label>
+      <label class="namelabel"><b> Name: </b></label>
       <input class="firstname" type="text" id="f_name" name="f_name">
 			
       </div>
 
-      <div class="age">
+      <div class="age" id="container">
 
-        <label class="age1">Age:</label>
-        <input type="number" id="age_1" name="age_1">
+        <label class="age1"><b> Age: </b></label>
+        <input type="number" id="age_1" name="age_1" min="18" max="25">
 
       </div>
 
-      <div class="email">
+      <div class="email" id="container">
 
-        <label class="mail">E-mail:</label>
-        <input type="email" name="email" id="email">
+        <label class="mail"><b> E-mail: </b></label>
+        <input type="email" name="email" id="email" placeholder="abc@tntra.io">
 
       </div>
       
-      <div class="phone">
+      <div class="phone" id="container">
 
-        <label class="number">Phone Number:</label>
-        <input type="text"  id="nume" name="phone">
+        <label class="number"><b> Phone Number: </b></label>
+        <input type="text"  id="nume" name="phone" placeholder="(000)-00-00000">
 
       </div>
 
-      <div class="gender">
+      <div class="gender" id="container">
         <legend class="gender1"><b>Gender:</b> 
         <label id="male"><input type="radio" value="male" name="gender">Male</label>
         <label id="female"><input type="radio" value="female" name="gender">Female</label>
@@ -54,5 +54,6 @@
       </div>
 
     </form>
+    <script src="../js/html1.js"></script>
   </body>
 </html>

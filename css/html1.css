@@ -5,12 +5,15 @@ body{
 
 form{
   background-color: rgb(187, 187, 187);
-  width: 385px;
+  width: 900px;
   margin-top: 18px;
   margin-left: 228px;
   margin-bottom: 85px;
   height: 209px;
   padding: 1px 0px 10px 15px;
+}
+.error{
+  color: red;
 }
 
 .name{
