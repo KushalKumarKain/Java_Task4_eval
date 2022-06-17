@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <form id="form" action="JAVA_task5pt2.html" method="get">
+    <form id="form" action="../html/html2.html" method="get" target="_blank">
 
       <div class="name" id="container">
 
@@ -40,14 +40,239 @@
 
       <div class="gender" id="container">
         <legend class="gender1"><b>Gender:</b> 
-        <label id="male"><input type="radio" value="male" name="gender">Male</label>
-        <label id="female"><input type="radio" value="female" name="gender">Female</label>
-        <label id="other"><input type="radio" value="others" name="gender">Others</label></legend>
+        <label id="male"><input type="radio" value="Male" name="gender">Male</label>
+        <label id="female"><input type="radio" value="Female" name="gender">Female</label>
+        <label id="other"><input type="radio" value="Others" name="gender">Others</label></legend>
       </div>
 
-      <!-- <div class="checkbox">
+      <div class="checkbox" id="container">
 
-      </div> -->
+        <legend><input type="checkbox" id = "check1" name="check_1">
+        <label class="checklabel1">NEXT-DAY CONFIGURATION</label><br>
+        <label class="checklabel2">Set Next Day Pick up time</label>
+        </legend>
+
+      
+      <div class="days">
+      <div class="Sunday">
+        <legend><input type="checkbox" value="Sunday" class = "check2 ">Sunday
+        <select class="day" id="dropdown1" name="sunday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Monday">
+        <legend><input type="checkbox" value="Monday" class = "check2">Monday
+        <select class="day" id="dropdown2" name="monday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Tuesday">
+        <legend><input type="checkbox" value="Tuesday" class = "check2">Tuesday
+        <select class="day" id="dropdown3" name="tuesday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Wednesday">
+        <legend><input type="checkbox" value="Wednesday" class = "check2">Wednesday
+        <select class="day" id="dropdown4" name="wednesday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Thursday">
+        <legend><input type="checkbox" value="Thursday" class = "check2">Thursday
+        <select class="day" id="dropdown5" name="thursday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Friday">
+        <legend><input type="checkbox" value="Friday" class = "check2">Friday
+        <select class="day" id="dropdown6" name="friday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+      </div>
+
+      <div class="Saturday">
+        <legend><input type="checkbox" value="Saturday" class = "check2">Saturday
+        <select class="day" id="dropdown7" name="saturday">
+          <option value="">--Select Time Format</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">01:00</option>
+          <option value="02:00">02:00</option>
+          <option value="03:00">03:00</option>
+          <option value="04:00">04:00</option>
+          <option value="05:00">05:00</option>
+          <option value="06:00">06:00</option>
+          <option value="07:00">07:00</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          </select></legend>
+        </div>
+      </div>
+      </div>
+
 
       <div class="submit">
         <button id="submitbtn" class="submitbutton" type="submit" value="submit">Submit</button>
