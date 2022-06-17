@@ -1,16 +1,91 @@
 $(document).ready(function(){
 
-  $('.check2').attr('disabled', true);
-
+  $('.check2_1').attr('disabled', true);
   $('#check1').change(function() {
-    $('.check2').attr('disabled', !this.checked);
+    $('.check2_1').attr('disabled', !this.checked);
   });
 
-  $('.day').attr('disabled',true);
 
-  $('.check2').change(function(){
-    $('.day').attr('disabled', !this.checked);
+  $('.check2_2').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_2').attr('disabled', !this.checked);
   });
+
+
+
+  $('.check2_3').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_3').attr('disabled', !this.checked);
+  });
+
+
+  $('.check2_4').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_4').attr('disabled', !this.checked);
+  });
+
+
+  $('.check2_5').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_5').attr('disabled', !this.checked);
+  });
+
+
+  $('.check2_6').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_6').attr('disabled', !this.checked);
+  });
+
+
+  $('.check2_7').attr('disabled', true);
+  $('#check1').change(function() {
+    $('.check2_7').attr('disabled', !this.checked);
+  });
+
+
+  $('.day1').attr('disabled',true);
+  $('.check2_1').change(function(){
+    $('.day1').attr('disabled', !this.checked);
+  });
+
+
+  $('.day2').attr('disabled',true);
+  $('.check2_2').change(function(){
+    $('.day2').attr('disabled', !this.checked);
+  });
+
+
+  $('.day3').attr('disabled',true);
+  $('.check2_3').change(function(){
+    $('.day3').attr('disabled', !this.checked);
+  });
+
+
+  $('.day4').attr('disabled',true);
+  $('.check2_4').change(function(){
+    $('.day4').attr('disabled', !this.checked);
+  });
+
+
+  $('.day5').attr('disabled',true);
+  $('.check2_5').change(function(){
+    $('.day5').attr('disabled', !this.checked);
+  });
+  
+
+  $('.day6').attr('disabled',true);
+  $('.check2_6').change(function(){
+    $('.day6').attr('disabled', !this.checked);
+  });
+
+
+  $('.day7').attr('disabled',true);
+  $('.check2_7').change(function(){
+    $('.day7').attr('disabled', !this.checked);
+
+    
+  });
+  
 
   $("#form").validate({
     errorPlacement: function( error, element ) {
@@ -66,10 +141,17 @@ $(document).ready(function(){
     },
    
   });
-  $validator.addMethod('email',function(value,element){
-    return this.optional(element) || !!value.trim().match(/^([A-Za-z0-9_\-\.])+\@([tntra|GMAIL])+\.(io)$/);
-    
-  }, "Please enter valid email");
+  $validator.addMethod('email',function(value){
+    return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
+  },"Please enter valid email");
+
+
+  // if ($('#name').valid() &&
+  // $('#age').valid() &&
+  // $("#email").valid() &&
+  // $("#phoneno").valid() && 
+  
+  // $("input[name='gender']:checked") != undefined);
 });
 
 $("#submitbtn").on('click', function() {
