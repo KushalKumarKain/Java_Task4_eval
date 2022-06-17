@@ -13,6 +13,46 @@ form{
   padding: 1px 0px 10px 15px;
 }
 
+.name{
+  height: 35px;
+}
+.namelabel::after{
+  content: "*";
+  color: red;
+}
+
+
+.age{
+  height: 35px;
+}
+.age1::after{
+  content: "*";
+  color: red;
+}
+
+
+.email{
+  height: 35px;
+}
+.mail::after{
+  content: "*";
+  color: red;
+}
+
+
+.phone{
+  height: 35px;
+}
+.number::after{
+  content: "*";
+  color: red;
+}
+
+
+.gender{
+  height: 35px;
+}
+
 
 .submit{
   width: 58px;
