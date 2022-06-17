@@ -3,8 +3,7 @@ $(document).ready(function() {
 });
 
 function loadData() {
-  $('#myTable').append('<tr><td>' 
-  + localStorage.count + '</td><td>'
+  $('#myTable').append('<tr><td>'
   + localStorage.fname + '</td><td>'
   + localStorage.age + '</td><td>'
   + localStorage.mail + '</td><td>'

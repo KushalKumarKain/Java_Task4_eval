@@ -73,7 +73,6 @@ $(document).ready(function(){
 });
 
 $("#submitbtn").on('click', function() {
-  localStorage.count = $('#myTable tr').length;
   localStorage.fname = $('#f_name').val();
   localStorage.age = $('#age_1').val();
   localStorage.mail = $('#email').val();
