@@ -28,6 +28,7 @@ $(document).ready(function(){
 
       email : {
         required : true,
+        email:true
       },
 
       phone : {
@@ -52,10 +53,6 @@ $(document).ready(function(){
         required : "   This is required"
       },
 
-      email : {
-        required : "This is required"
-      },
-
       phone : {
         required : "This is required",
         Number : "Enter only number",
@@ -66,8 +63,13 @@ $(document).ready(function(){
         required : "This is required"
       }
 
-    }
+    },
+   
   });
+  $validator.addMethod('email',function(value,element){
+    return this.optional(element) || !!value.trim().match(/^([A-Za-z0-9_\-\.])+\@([tntra|GMAIL])+\.(io)$/);
+    
+  }, "Please enter valid email");
 });
 
 $("#submitbtn").on('click', function() {
@@ -77,7 +79,7 @@ $("#submitbtn").on('click', function() {
   localStorage.mail = $('#email').val();
   localStorage.phone = $('#nume').val();
   localStorage.gender1 = $('input[name="gender"]:checked').val();
-  localStorage.sunday = $('#dropdown1').val();
+  localStorage.sun = $('#dropdown1').val();
   localStorage.mon = $('#dropdown2').val();
   localStorage.tues = $('#dropdown3').val();
   localStorage.wed = $('#dropdown4').val();
