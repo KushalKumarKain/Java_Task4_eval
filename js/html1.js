@@ -83,7 +83,7 @@ $(document).ready(function(){
   $('.check2_7').change(function(){
     $('.day7').attr('disabled', !this.checked);
 
-    
+
   });
   
 
@@ -108,8 +108,7 @@ $(document).ready(function(){
 
       phone : {
         required : true,
-        Number : true,
-        length : 10
+        limit : true
       },
 
       gender : {
@@ -141,20 +140,36 @@ $(document).ready(function(){
     },
    
   });
-  $validator.addMethod('email',function(value){
-    return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
-  },"Please enter valid email");
 
 
-  // if ($('#name').valid() &&
-  // $('#age').valid() &&
-  // $("#email").valid() &&
-  // $("#phoneno").valid() && 
-  
-  // $("input[name='gender']:checked") != undefined);
+
+$.validator.addMethod('email',function(value){
+  return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
+},"Please enter valid email");
 });
+function isEmail(email) {
+  var regex = /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/
+  return regex.test(email);
+}
+
+$.validator.addMethod('limit',function(value){
+  return /[1-9]{1}[0-9]{9}/.test(value); 
+}, 'Please enter a valid Phone number');
+function isPhone(limit){
+  var regex = /[1-9]{1}[0-9]{9}/
+  return regex.test(limit);
+}
+
 
 $("#submitbtn").on('click', function() {
+  if (
+  $('#f_name').valid() &&
+  $('#age_1').valid() &&
+  $("#email").valid() &&
+  $("#nume").valid() && 
+  $("input[name='gender']:checked") != undefined);
+  
+{
   localStorage.fname = $('#f_name').val();
   localStorage.age = $('#age_1').val();
   localStorage.mail = $('#email').val();
@@ -168,4 +183,4 @@ $("#submitbtn").on('click', function() {
   localStorage.fri = $('#dropdown6').val();
   localStorage.sat = $('#dropdown7').val();
 
-});
+}});
