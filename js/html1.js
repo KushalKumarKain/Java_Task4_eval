@@ -4,7 +4,7 @@ $(document).ready(function(){
   $('#check1').change(function() {
     $('.check2_1').attr('disabled', !this.checked);
   });
-
+  
 
   $('.check2_2').attr('disabled', true);
   $('#check1').change(function() {
@@ -86,59 +86,56 @@ $(document).ready(function(){
 
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Sunday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Sunday').find('select').val('');
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Monday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Monday').find('select').val('');
   });
   
-  $('select').on('click change',function() {
-    $(this).closest('div.Tuesday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
+
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Tuesday').find('select').val('');
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Wednesday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
+
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Wednesday').find('select').val('');
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Thursday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
+
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Thursday').find('select').val('');
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Friday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
+
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Friday').find('select').val('');
   });
 
-  $('select').on('click change',function() {
-    $(this).closest('div.Saturday').find('input:checkbox').prop('checked',$(this).val()>0);
-  });
+
   $('input:checkbox').on('click change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Saturday').find('select').val('');
   });
 
   $("#form").validate({
-    errorPlacement: function( error, element ) {
-      error.appendTo(element.parents('#container'));
-      },
+
+    errorPlacement: function(error, element) {
+      if (element.is(":radio")){
+        error.insertAfter("#other");
+    }
+    // else if(element.is("#check_1-error")){
+    //   error.insertAfter(":label")
+    // }
+    // else if(element.is("#check2_1-error")){
+    //   error.insertAfter("#check2_1");
+    // }
+    else{
+      error.insertAfter(element);
+    }
+  },
+
     rules:{
       f_name :{
         required: true,
@@ -165,7 +162,28 @@ $(document).ready(function(){
 
       check_1 : {
         required : true
-      }
+      },
+      // check2_1:{
+      //   sunfunc:true
+      // }
+      // monday:{
+      //   monfunc:true
+      // },
+      // tuesday:{
+      //   tuesfunc:true
+      // },
+      // wednesday:{
+      //   wedfunc:true
+      // },
+      // thursday:{
+      //   thursfunc:true
+      // },
+      // friday:{
+      //   frifunc:true
+      // },
+      // saturday:{
+      //   satfunc:true
+      // }
     },
 
     messages : {
@@ -188,7 +206,7 @@ $(document).ready(function(){
         required : "This is required"
       }
 
-    },
+    }
    
   });
 
@@ -214,15 +232,51 @@ function isPhone(limit){
 
 
 
+
+//  $.validator.addMethod('sunfunc',function(){
+//    return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
+//   }, 'Please enter Pick up time');
+
+  // $.validator.addMethod('sunfunc',function(){
+  //   return $("#CHECK2_2").val()=='on' && $('#dropdown2').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('monfunc',function(){
+  //   return $("#CHECK2_3").val()=='on' && $('#dropdown3').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('tuesfunc',function(){
+  //   return $("#CHECK2_4").val()=='on' && $('#dropdown4').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('wedfunc',function(){
+  //   return $("#CHECK2_5").val()=='on' && $('#dropdown5').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('thursfunc',function(){
+  //   return $("#CHECK2_6").val()=='on' && $('#dropdown6').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('frifunc',function(){
+  //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
+  //  }, 'Please enter Pick up time');
+
+  //  $.validator.addMethod('satfunc',function(){
+  //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
+  //  }, 'Please enter Pick up time');
+
+
+ 
 $("#submitbtn").on('click', function() {
   if (
   $('#f_name').valid() &&
   $('#age_1').valid() &&
   $("#email").valid() &&
   $("#nume").valid() && 
-  $("input[name='gender']:checked") != undefined);
+  $("input[name='gender']:checked") != undefined );
   
 {
+  
   localStorage.fname = $('#f_name').val();
   localStorage.age = $('#age_1').val();
   localStorage.mail = $('#email').val();
@@ -236,4 +290,6 @@ $("#submitbtn").on('click', function() {
   localStorage.fri = $('#dropdown6').val();
   localStorage.sat = $('#dropdown7').val();
 
-}});
+}
+
+});

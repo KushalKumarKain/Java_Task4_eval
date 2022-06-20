@@ -47,20 +47,20 @@
 
       <div class="checkbox" id="container">
 
-<<<<<<< HEAD
-        <legend class="first_check"><input type="checkbox" id = "check1" name="check_1">
-=======
-        <legend><input type="checkbox" id = "check1" name="check_1" required>
->>>>>>> 6792c6abeb5684b09199488733b80261a1f0c056
-        <label class="checklabel1">NEXT-DAY CONFIGURATION</label><br>
+        <div class="days">
+
+
+        <label id="first_check"><input type="checkbox" id = "check1" name="check_1">
+        NEXT-DAY CONFIGURATION</label><br>
         <label class="checklabel2">Set Next Day Pick up time</label>
-        </legend>
+        
 
       
-      <div class="days">
+
       <div class="Sunday">
-        <legend><input type="checkbox" value="Sunday" class = "check2_1">Sunday
+        <label><input type="checkbox" value="Sunday" class = "check2_1" id="CHECK2_1" name="check2_1">Sunday
         <select class="day1" id="dropdown1" name="sunday">
+
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
           <option value="01:00">01:00</option>
@@ -86,11 +86,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
-      </div>
+          </select></label>
+      </div>   
 
       <div class="Monday">
-        <legend><input type="checkbox" value="Monday" class = "check2_2">Monday
+        <label><input type="checkbox" value="Monday" class = "check2_2" id="CHECK2_2">Monday
         <select class="day2" id="dropdown2" name="monday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -117,11 +117,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
       </div>
 
       <div class="Tuesday">
-        <legend><input type="checkbox" value="Tuesday" class = "check2_3">Tuesday
+        <label><input type="checkbox" value="Tuesday" class = "check2_3" id="CHECK2_3">Tuesday
         <select class="day3" id="dropdown3" name="tuesday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -148,11 +148,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
       </div>
 
       <div class="Wednesday">
-        <legend><input type="checkbox" value="Wednesday" class = "check2_4">Wednesday
+        <label><input type="checkbox" value="Wednesday" class = "check2_4" id="CHECK2_4">Wednesday
         <select class="day4" id="dropdown4" name="wednesday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -179,11 +179,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
       </div>
 
       <div class="Thursday">
-        <legend><input type="checkbox" value="Thursday" class = "check2_5">Thursday
+        <label><input type="checkbox" value="Thursday" class = "check2_5" id="CHECK2_5">Thursday
         <select class="day5" id="dropdown5" name="thursday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -210,11 +210,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
       </div>
 
       <div class="Friday">
-        <legend><input type="checkbox" value="Friday" class = "check2_6">Friday
+        <label><input type="checkbox" value="Friday" class = "check2_6" id="CHECK2_6">Friday
         <select class="day6" id="dropdown6" name="friday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -241,11 +241,11 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
       </div>
 
       <div class="Saturday">
-        <legend><input type="checkbox" value="Saturday" class = "check2_7">Saturday
+        <label><input type="checkbox" value="Saturday" class = "check2_7" id="CHECK2_7">Saturday
         <select class="day7" id="dropdown7" name="saturday">
           <option value="">--Select Time Format</option>
           <option value="00:00">00:00</option>
@@ -272,7 +272,7 @@
           <option value="21:00">21:00</option>
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
-          </select></legend>
+          </select></label>
         </div>
       </div>
       </div>
