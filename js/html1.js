@@ -85,7 +85,55 @@ $(document).ready(function(){
 
 
   });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Sunday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Sunday').find('select').val('');
+  });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Monday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Monday').find('select').val('');
+  });
   
+  $('select').on('click change',function() {
+    $(this).closest('div.Tuesday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Tuesday').find('select').val('');
+  });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Wednesday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Wednesday').find('select').val('');
+  });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Thursday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Thursday').find('select').val('');
+  });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Friday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Friday').find('select').val('');
+  });
+
+  $('select').on('click change',function() {
+    $(this).closest('div.Saturday').find('input:checkbox').prop('checked',$(this).val()>0);
+  });
+  $('input:checkbox').on('click change',function() {
+    if (!$(this).is(':checked')) $(this).closest('div.Saturday').find('select').val('');
+  });
 
   $("#form").validate({
     errorPlacement: function( error, element ) {
@@ -113,8 +161,11 @@ $(document).ready(function(){
 
       gender : {
         required : true
-      }
+      },
 
+      check_1 : {
+        required : true
+      }
     },
 
     messages : {
@@ -152,6 +203,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 
+
 $.validator.addMethod('limit',function(value){
   return /[1-9]{1}[0-9]{9}/.test(value); 
 }, 'Please enter a valid Phone number');
@@ -159,6 +211,7 @@ function isPhone(limit){
   var regex = /[1-9]{1}[0-9]{9}/
   return regex.test(limit);
 }
+
 
 
 $("#submitbtn").on('click', function() {

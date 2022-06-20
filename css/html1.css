@@ -64,12 +64,65 @@ form{
   margin-bottom: 35px;
   margin-top: 20px;
 }
+.Sunday{
+  font-size: 22px;
+}
+#dropdown1{
+  margin-left: 220px;
+  font-size: 15px;
+}
+.Monday{
+  font-size: 22px;
+}
+#dropdown2{
+  margin-left: 212px;
+  font-size: 15px;
+}
+.Tuesday{
+  font-size: 22px;
+}
+#dropdown3{
+  margin-left: 212px;
+  font-size: 15px;
+}
+.Wednesday{
+  font-size: 22px;
+}
+#dropdown4{
+  margin-left: 185px;
+  font-size: 15px;
+}
+.Thursday{
+  font-size: 22px;
+}
+#dropdown5{
+  margin-left: 203px;
+  font-size: 15px;
+}
+.Friday{
+  font-size: 22px;
+}
+#dropdown6{
+  margin-left: 228px;
+  font-size: 15px;
+}
+.Saturday{
+  font-size: 22px;
+}
+#dropdown7{
+  margin-left: 208px;
+  font-size: 15px;
+}
+
 #dropdown{
   background-color: lightgray;
   color: rgb(83, 83, 83);
 }
 .checkbox{
   margin-top: 50px;
+}
+.first_check{
+  font-size: 22px;
 }
 
 
