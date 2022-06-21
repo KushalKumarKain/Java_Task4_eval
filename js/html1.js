@@ -3,6 +3,7 @@ $(document).ready(function(){
   ///////////////////////////////////////////////////////////////////////////////////
   // Code to enable days checkbox
   /////////////////////////////////////////////////////////////////////////////////////
+
   $('.check2_1').attr('disabled', true);
   $('#check1').change(function() {
     $('.check2_1').attr('disabled', !this.checked);
@@ -245,7 +246,7 @@ $("#form").validate({
   $.validator.addMethod('email',function(value){
     return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
   },"Please enter valid email");
-  });
+  
 
   function isEmail(email) {
     var regex = /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/
@@ -265,9 +266,9 @@ $("#form").validate({
   // Code to validate empty dropdown
   /////////////////////////////////////////////////////////////////////////////////////
  
-$.validator.addMethod('sunfunc',function(value){
-   return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
-}, 'Please enter Pick up time');
+// $.validator.addMethod('sunfunc',function(value){
+//    return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
+// }, 'Please enter Pick up time');
 
   // $.validator.addMethod('sunfunc',function(){
   //   return $("#CHECK2_2").val()=='on' && $('#dropdown2').val() != '';
@@ -297,7 +298,7 @@ $.validator.addMethod('sunfunc',function(value){
   //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
   //  }, 'Please enter Pick up time');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+});
 ///////////////////////////////////////////////////////////////////////////////////
   // Submit button code
 /////////////////////////////////////////////////////////////////////////////////////
