@@ -129,16 +129,9 @@ $(document).ready(function(){
   });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-  // $('input:checkbox').on('change',function() {
-  //   if (!$(this).is(':checked')) $(this).closest('#check1').find('select').val('');
-  // });
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 ///////////////////////////////////////////////////////////////////////////////////
   // Code for validations
-  /////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 $("#form").validate({
@@ -150,9 +143,6 @@ $("#form").validate({
         else if(element.is("#check_1-error")){
           error.insertAfter("#first_check")
         }
-        // else if(element.is("#check2_1-error")){
-        //   error.insertAfter("#check2_1");
-        // }
         else{
           error.insertAfter(element);
         }
@@ -188,27 +178,50 @@ $("#form").validate({
         required : true
       },
 
-      check2_1:{
-        sunfunc:true
-      }
-      // monday:{
-      //   monfunc:true
-      // },
-      // tuesday:{
-      //   tuesfunc:true
-      // },
-      // wednesday:{
-      //   wedfunc:true
-      // },
-      // thursday:{
-      //   thursfunc:true
-      // },
-      // friday:{
-      //   frifunc:true
-      // },
-      // saturday:{
-      //   satfunc:true
-      // }
+      sunday : {
+        required : true
+      },
+      monday : {
+        required : true
+      },
+      tuesday : {
+        required : true
+      },
+      wednesday : {
+        required : true
+      },
+      thursday : {
+        required : true
+      },
+      friday : {
+        required : true
+      },
+      saturday : {
+        required : true
+      },
+
+      check2_1 : {
+        required : true
+      },
+      check2_2 : {
+        required : true
+      },
+      check2_3 : {
+        required : true
+      },
+      check2_4 : {
+        required : true
+      },
+      check2_5 : {
+        required : true
+      },
+      check2_6 : {
+        required : true
+      },
+      check2_7 : {
+        required : true
+      },
+
     },
 
     messages : {
@@ -233,8 +246,57 @@ $("#form").validate({
 
       check_1 : {
         required : "This is required"
-      }
+      },
 
+      sunday : {
+        required : "This is required"
+      },
+
+      monday : {
+        required : "This is required"
+      },
+
+      tuesday : {
+        required : "This is required"
+      },
+
+      wednesday : {
+        required : "This is required"
+      },
+
+      thursday : {
+        required : "This is required"
+      },
+
+      friday : {
+        required : "This is required"
+      },
+
+      saturday : {
+        required : "This is required"
+      },
+
+      check2_1 : {
+        required : "This is required"
+      },
+      check2_2 : {
+        required : "This is required"
+      },
+      check2_3 : {
+        required : "This is required"
+      },
+      check2_4 : {
+        required : "This is required"
+      },
+      check2_5 : {
+        required : "This is required"
+      },
+      check2_6 : {
+        required : "This is required"
+      },
+      check2_7 : {
+        required : "This is required"
+      }
     }
    
 });
@@ -262,41 +324,6 @@ $("#form").validate({
   return regex.test(limit);
   }
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // Code to validate empty dropdown
-  /////////////////////////////////////////////////////////////////////////////////////
- 
-// $.validator.addMethod('sunfunc',function(value){
-//    return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
-// }, 'Please enter Pick up time');
-
-  // $.validator.addMethod('sunfunc',function(){
-  //   return $("#CHECK2_2").val()=='on' && $('#dropdown2').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('monfunc',function(){
-  //   return $("#CHECK2_3").val()=='on' && $('#dropdown3').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('tuesfunc',function(){
-  //   return $("#CHECK2_4").val()=='on' && $('#dropdown4').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('wedfunc',function(){
-  //   return $("#CHECK2_5").val()=='on' && $('#dropdown5').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('thursfunc',function(){
-  //   return $("#CHECK2_6").val()=='on' && $('#dropdown6').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('frifunc',function(){
-  //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
-  //  }, 'Please enter Pick up time');
-
-  //  $.validator.addMethod('satfunc',function(){
-  //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
-  //  }, 'Please enter Pick up time');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 });
 ///////////////////////////////////////////////////////////////////////////////////
