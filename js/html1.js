@@ -1,10 +1,13 @@
 $(document).ready(function(){
 
+  ///////////////////////////////////////////////////////////////////////////////////
+  // Code to enable days checkbox
+  /////////////////////////////////////////////////////////////////////////////////////
   $('.check2_1').attr('disabled', true);
   $('#check1').change(function() {
     $('.check2_1').attr('disabled', !this.checked);
   });
-  
+
 
   $('.check2_2').attr('disabled', true);
   $('#check1').change(function() {
@@ -42,6 +45,9 @@ $(document).ready(function(){
     $('.check2_7').attr('disabled', !this.checked);
   });
 
+  ///////////////////////////////////////////////////////////////////////////////////
+  // Code to enable dropdown 
+  /////////////////////////////////////////////////////////////////////////////////////
 
   $('.day1').attr('disabled',true);
   $('.check2_1').change(function(){
@@ -82,59 +88,76 @@ $(document).ready(function(){
   $('.day7').attr('disabled',true);
   $('.check2_7').change(function(){
     $('.day7').attr('disabled', !this.checked);
-
-
   });
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  // Code to empty dropdown value upon unchecking
+  /////////////////////////////////////////////////////////////////////////////////////
 
   $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Sunday').find('select').val('');
   });
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Monday').find('select').val('');
   });
   
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Tuesday').find('select').val('');
   });
 
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Wednesday').find('select').val('');
   });
 
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Thursday').find('select').val('');
   });
 
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Friday').find('select').val('');
   });
 
 
-  $('input:checkbox').on('click change',function() {
+  $('input:checkbox').on('change',function() {
     if (!$(this).is(':checked')) $(this).closest('div.Saturday').find('select').val('');
   });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  $("#form").validate({
 
-    errorPlacement: function(error, element) {
-      if (element.is(":radio")){
-        error.insertAfter("#other");
-    }
-    // else if(element.is("#check_1-error")){
-    //   error.insertAfter(":label")
-    // }
-    // else if(element.is("#check2_1-error")){
-    //   error.insertAfter("#check2_1");
-    // }
-    else{
-      error.insertAfter(element);
-    }
-  },
+  // $('input:checkbox').on('change',function() {
+  //   if (!$(this).is(':checked')) $(this).closest('#check1').find('select').val('');
+  // });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////
+  // Code for validations
+  /////////////////////////////////////////////////////////////////////////////////////
+
+
+$("#form").validate({
+    //////////////////////////////////////////////////////////////////////////
+        errorPlacement: function(error, element) {
+          if (element.is(":radio")){
+            error.insertAfter("#other");
+        }
+        else if(element.is("#check_1-error")){
+          error.insertAfter("#first_check")
+        }
+        // else if(element.is("#check2_1-error")){
+        //   error.insertAfter("#check2_1");
+        // }
+        else{
+          error.insertAfter(element);
+        }
+      },
+    //////////////////////////////////////////////////////////////////////////////
+
 
     rules:{
       f_name :{
@@ -163,9 +186,10 @@ $(document).ready(function(){
       check_1 : {
         required : true
       },
-      // check2_1:{
-      //   sunfunc:true
-      // }
+
+      check2_1:{
+        sunfunc:true
+      }
       // monday:{
       //   monfunc:true
       // },
@@ -204,38 +228,46 @@ $(document).ready(function(){
 
       gender : {
         required : "This is required"
+      },
+
+      check_1 : {
+        required : "This is required"
       }
 
     }
    
+});
+
+///////////////////////////////////////////////////////////////////////////////////
+// Validator functions
+/////////////////////////////////////////////////////////////////////////////////////
+
+  $.validator.addMethod('email',function(value){
+    return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
+  },"Please enter valid email");
   });
 
+  function isEmail(email) {
+    var regex = /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/
+      return regex.test(email);
+  }
 
-
-$.validator.addMethod('email',function(value){
-  return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
-},"Please enter valid email");
-});
-function isEmail(email) {
-  var regex = /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/
-  return regex.test(email);
-}
-
-
-$.validator.addMethod('limit',function(value){
-  return /[1-9]{1}[0-9]{9}/.test(value); 
-}, 'Please enter a valid Phone number');
-function isPhone(limit){
+  $.validator.addMethod('limit',function(value){
+    return /[1-9]{1}[0-9]{9}/.test(value); 
+  }, 'Please enter a valid Phone number');
+  
+  function isPhone(limit){
   var regex = /[1-9]{1}[0-9]{9}/
   return regex.test(limit);
-}
+  }
 
-
-
-
-//  $.validator.addMethod('sunfunc',function(){
-//    return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
-//   }, 'Please enter Pick up time');
+  ///////////////////////////////////////////////////////////////////////////////////
+  // Code to validate empty dropdown
+  /////////////////////////////////////////////////////////////////////////////////////
+ 
+$.validator.addMethod('sunfunc',function(value){
+   return $("#CHECK2_1").val()=='on' && $('#dropdown1').val() != '';
+}, 'Please enter Pick up time');
 
   // $.validator.addMethod('sunfunc',function(){
   //   return $("#CHECK2_2").val()=='on' && $('#dropdown2').val() != '';
@@ -264,16 +296,21 @@ function isPhone(limit){
   //  $.validator.addMethod('satfunc',function(){
   //   return $("#CHECK2_7").val()=='on' && $('#dropdown7').val() != '';
   //  }, 'Please enter Pick up time');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
- 
+///////////////////////////////////////////////////////////////////////////////////
+  // Submit button code
+/////////////////////////////////////////////////////////////////////////////////////
 $("#submitbtn").on('click', function() {
+
+////////////////////////////////////////////////////////////////
+ // to make values valid and store them in local storage 
   if (
   $('#f_name').valid() &&
   $('#age_1').valid() &&
   $("#email").valid() &&
   $("#nume").valid() && 
-  $("input[name='gender']:checked") != undefined );
+  $("input[name='gender']:checked") != undefined);
   
 {
   
@@ -291,5 +328,5 @@ $("#submitbtn").on('click', function() {
   localStorage.sat = $('#dropdown7').val();
 
 }
-
 });
+////////////////////////////////////////////////////////////////////
