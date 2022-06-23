@@ -10,11 +10,11 @@ $(document).ready(function(){
   });
 
 
+
   $('.check2_2').attr('disabled', true);
   $('#check1').change(function() {
     $('.check2_2').attr('disabled', !this.checked);
   });
-
 
 
   $('.check2_3').attr('disabled', true);
@@ -51,7 +51,7 @@ $(document).ready(function(){
   /////////////////////////////////////////////////////////////////////////////////////
 
   $('.day1').attr('disabled',true);
-  $('.check2_1').change(function(){
+  $('.check2_1 ').change(function(){
     $('.day1').attr('disabled', !this.checked);
   });
 
@@ -90,6 +90,30 @@ $(document).ready(function(){
   $('.check2_7').change(function(){
     $('.day7').attr('disabled', !this.checked);
   });
+  
+
+  $('.day1').attr('disabled',true);
+  $('.check_1').change(function(){
+    $('.day1').attr('disabled', this.checked);
+  });
+
+
+
+
+  // $(".parent-class").on("change",".check2_1", function() {
+  //   var enabledDropdown = $(this).data("dropdown")
+  //   $(`#${enabledDropdown}`).removeAttr("disabled")
+  // });
+
+  // if("#check1".is(':checked') = false) 
+  // {
+  //   ("#dropdown1".is('disabled') = true);
+  // }
+
+
+  
+
+
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Code to empty dropdown value upon unchecking
@@ -140,9 +164,9 @@ $("#form").validate({
           if (element.is(":radio")){
             error.insertAfter("#other");
         }
-        else if(element.is("#check_1-error")){
-          error.insertAfter("#first_check")
-        }
+        // else if(element.is("#check_1-error")){
+        //   error.insertAfter("#first_check")
+        // }
         else{
           error.insertAfter(element);
         }
@@ -198,29 +222,7 @@ $("#form").validate({
       },
       saturday : {
         required : true
-      },
-
-      check2_1 : {
-        required : true
-      },
-      check2_2 : {
-        required : true
-      },
-      check2_3 : {
-        required : true
-      },
-      check2_4 : {
-        required : true
-      },
-      check2_5 : {
-        required : true
-      },
-      check2_6 : {
-        required : true
-      },
-      check2_7 : {
-        required : true
-      },
+      }
 
     },
 
@@ -308,37 +310,51 @@ $("#form").validate({
   $.validator.addMethod('email',function(value){
     return /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/.test(value);
   },"Please enter valid email");
-  
-
   function isEmail(email) {
     var regex = /^([A-Za-z0-9_\-\.])+\@([tntra])+\.(io)/
       return regex.test(email);
   }
 
+
   $.validator.addMethod('limit',function(value){
-    return /[1-9]{1}[0-9]{9}/.test(value); 
+    return /[7-9]{1}[0-9]{9}/.test(value); 
   }, 'Please enter a valid Phone number');
-  
   function isPhone(limit){
-  var regex = /[1-9]{1}[0-9]{9}/
+  var regex = /[7-9]{1}[0-9]{9}/
   return regex.test(limit);
   }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 });
+
+
 ///////////////////////////////////////////////////////////////////////////////////
   // Submit button code
 /////////////////////////////////////////////////////////////////////////////////////
+
+
 $("#submitbtn").on('click', function() {
 
 ////////////////////////////////////////////////////////////////
  // to make values valid and store them in local storage 
-  if (
+
+  if(
   $('#f_name').valid() &&
   $('#age_1').valid() &&
   $("#email").valid() &&
   $("#nume").valid() && 
   $("input[name='gender']:checked") != undefined);
+  // (
+  //   $(['input[name=check2_1]']).is(':checked') != false ||
+  //   $(['input[name=check2_2]']).is(':checked') != false ||
+  //   $(['input[name=check2_3]']).is(':checked') != false ||
+  //   $(['input[name=check2_4]']).is(':checked') != false ||
+  //   $(['input[name=check2_5]']).is(':checked') != false ||
+  //   $(['input[name=check2_6]']).is(':checked') != false ||
+  //   $(['input[name=check2_7]']).is(':checked') != false
+  // )
+  // );
+
   
 {
   
