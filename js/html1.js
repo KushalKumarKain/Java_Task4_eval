@@ -158,19 +158,21 @@ $(document).ready(function(){
 /////////////////////////////////////////////////////////////////////////////////////
 
 
+
 $("#form").validate({
     //////////////////////////////////////////////////////////////////////////
         errorPlacement: function(error, element) {
           if (element.is(":radio")){
             error.insertAfter("#other");
         }
-        // else if(element.is("#check_1-error")){
-        //   error.insertAfter("#first_check")
-        // }
+        else if(element.is(":checkbox")){
+          error.insertAfter("#first_check")
+        }
         else{
           error.insertAfter(element);
         }
       },
+      
     //////////////////////////////////////////////////////////////////////////////
 
 
@@ -324,6 +326,8 @@ $("#form").validate({
   return regex.test(limit);
   }
 
+  
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 });
 
@@ -344,16 +348,7 @@ $("#submitbtn").on('click', function() {
   $("#email").valid() &&
   $("#nume").valid() && 
   $("input[name='gender']:checked") != undefined);
-  // (
-  //   $(['input[name=check2_1]']).is(':checked') != false ||
-  //   $(['input[name=check2_2]']).is(':checked') != false ||
-  //   $(['input[name=check2_3]']).is(':checked') != false ||
-  //   $(['input[name=check2_4]']).is(':checked') != false ||
-  //   $(['input[name=check2_5]']).is(':checked') != false ||
-  //   $(['input[name=check2_6]']).is(':checked') != false ||
-  //   $(['input[name=check2_7]']).is(':checked') != false
-  // )
-  // );
+  
 
   
 {
